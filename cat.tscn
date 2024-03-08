@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhvqxpvj0w7uj"]
+
+[ext_resource type="Script" path="res://cat.gd" id="1_1dyk3"]
+[ext_resource type="Texture2D" uid="uid://bwxk3oaf8e0le" path="res://Sprites/0c27387d-41c9-47b1-a08c-10d660c310f2.png" id="2_diwuv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gs8hm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_diwuv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cat" type="Node2D"]
+script = ExtResource("1_1dyk3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gs8hm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
