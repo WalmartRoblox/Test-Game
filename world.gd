@@ -9,9 +9,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
 
-
-func _on_cat_body_entered(body):
-	$Cat.gravity=0
-	$Cat.velocity.y=0
