@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://x4ibfx1mri0a"]
+[gd_scene load_steps=9 format=3 uid="uid://ddm58elx4kfkg"]
 
 [ext_resource type="Texture2D" uid="uid://80fyh4okwa5" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0.png" id="1_imunf"]
 [ext_resource type="Texture2D" uid="uid://c6wxypuyoupd4" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl1.png" id="2_jxqq7"]

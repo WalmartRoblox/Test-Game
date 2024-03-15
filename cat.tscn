@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhvqxpvj0w7uj"]
+[gd_scene load_steps=6 format=3 uid="uid://dhvqxpvj0w7uj"]
 
 [ext_resource type="Script" path="res://cat.gd" id="1_1dyk3"]
 [ext_resource type="Texture2D" uid="uid://bwxk3oaf8e0le" path="res://Sprites/0c27387d-41c9-47b1-a08c-10d660c310f2.png" id="2_diwuv"]
+[ext_resource type="AudioStream" uid="uid://bxaf5mcyfhpib" path="res://Audio_bounce_1.mp3" id="3_p0c6q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gs8hm"]
 animations = [{
@@ -33,5 +34,14 @@ shape = SubResource("RectangleShape2D_6ya2o")
 
 [node name="jump_timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1186.0
+offset_top = -468.0
+offset_right = -654.0
+offset_bottom = -88.0
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_p0c6q")
 
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
