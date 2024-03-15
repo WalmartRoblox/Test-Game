@@ -38,9 +38,9 @@ func _process(delta):
 	if(velocity.y>= termVol):
 		velocity.y=termVol
 	$Label.set_text("gravity: " + str(gravity)+
-				"\nspeed: " + str(speed)+
-				"\ntermVol: " + str(termVol)+
-				"\njump: " + str(jump))
+					"\nspeed: " + str(speed)+
+					"\ntermVol: " + str(termVol)+
+					"\njump: " + str(jump))
 	
 	var horizontal_direction = Input.get_axis("walk_left","walk_right")
 	velocity.x = speed *horizontal_direction+jumpLeft+jumpRight
@@ -51,6 +51,7 @@ func _process(delta):
 		for body in $"Intereaction_Vicinity".get_overlapping_areas():
 			if body.is_in_group("keys"):
 				print("got key")
+				key_collected.emit()
 				body.queue_free()
 	
 
