@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://cat.gd" id="1_1dyk3"]
 [ext_resource type="Texture2D" uid="uid://bwxk3oaf8e0le" path="res://Sprites/0c27387d-41c9-47b1-a08c-10d660c310f2.png" id="2_diwuv"]
+[ext_resource type="AudioStream" uid="uid://bxaf5mcyfhpib" path="res://Audio_bounce_1.mp3" id="3_p0c6q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gs8hm"]
 animations = [{
@@ -37,10 +38,6 @@ shape = SubResource("RectangleShape2D_6ya2o")
 [node name="jump_timer" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="Intereaction _Vicinity" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Intereaction _Vicinity"]
-shape = SubResource("CircleShape2D_gkbi4")
 
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="area_entered" from="Intereaction _Vicinity" to="." method="_on_intereaction__vicinity_area_entered"]
