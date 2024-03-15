@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhvqxpvj0w7uj"]
+[gd_scene load_steps=6 format=3 uid="uid://dhvqxpvj0w7uj"]
 
 [ext_resource type="Script" path="res://cat.gd" id="1_1dyk3"]
 [ext_resource type="Texture2D" uid="uid://bwxk3oaf8e0le" path="res://Sprites/0c27387d-41c9-47b1-a08c-10d660c310f2.png" id="2_diwuv"]
@@ -17,6 +17,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ya2o"]
 size = Vector2(101, 237)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkbi4"]
+radius = 78.0
+
 [node name="Cat" type="CharacterBody2D"]
 position = Vector2(606, 248)
 scale = Vector2(0.5, 0.5)
@@ -27,11 +30,17 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gs8hm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.5, -3.5)
+position = Vector2(-2, -2)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_6ya2o")
 
 [node name="jump_timer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Intereaction _Vicinity" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Intereaction _Vicinity"]
+shape = SubResource("CircleShape2D_gkbi4")
+
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="area_entered" from="Intereaction _Vicinity" to="." method="_on_intereaction__vicinity_area_entered"]
