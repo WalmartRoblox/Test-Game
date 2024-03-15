@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dphnnel87ujw5"]
+[gd_scene load_steps=6 format=3 uid="uid://dphnnel87ujw5"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_37yui"]
 [ext_resource type="PackedScene" uid="uid://ddm58elx4kfkg" path="res://tile_map.tscn" id="2_8e02q"]
 [ext_resource type="PackedScene" uid="uid://dhvqxpvj0w7uj" path="res://cat.tscn" id="2_k60cn"]
-
+[ext_resource type="PackedScene" uid="uid://biaojwgb3vrdk" path="res://key.tscn" id="4_ilnn0"]
+[ext_resource type="PackedScene" uid="uid://48dghfjirwhq" path="res://door.tscn" id="5_qvs3x"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_37yui")
@@ -15,3 +16,8 @@ layer_0/tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1, 131072, 2, 2, 196608,
 
 [node name="FrontTiles" parent="." instance=ExtResource("2_8e02q")]
 
+[node name="key" parent="." instance=ExtResource("4_ilnn0")]
+position = Vector2(542, 430)
+
+[node name="Door" parent="." instance=ExtResource("5_qvs3x")]
+position = Vector2(833, 416)

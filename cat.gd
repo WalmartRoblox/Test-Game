@@ -48,7 +48,7 @@ func _process(delta):
 	
 	if (Input.is_action_just_pressed("interact")):
 		print("interaction")
-		for body in $"Intereaction _Vicinity".get_overlapping_areas():
+		for body in $"Intereaction_Vicinity".get_overlapping_areas():
 			if body.is_in_group("keys"):
 				print("got key")
 				body.queue_free()
