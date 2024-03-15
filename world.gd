@@ -10,6 +10,6 @@ func _ready():
 func _process(delta):
 	if(Input.is_action_just_pressed("Respawn")):
 		$Cat.set_position(Vector2(606,248))
-
+	$Camera2D.set_offset($Cat.get_position())
 
 	

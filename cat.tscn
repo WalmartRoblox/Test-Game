@@ -52,5 +52,9 @@ offset_bottom = -114.0
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-914, -206)
 stream = ExtResource("3_n7p6m")
+volume_db = -24.33
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]

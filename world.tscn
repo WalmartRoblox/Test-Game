@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dphnnel87ujw5"]
+[gd_scene load_steps=10 format=3 uid="uid://dphnnel87ujw5"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_37yui"]
 [ext_resource type="PackedScene" uid="uid://ddm58elx4kfkg" path="res://tile_map.tscn" id="2_8e02q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://80fyh4okwa5" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0.png" id="4_0oqap"]
 [ext_resource type="PackedScene" path="res://key.tscn" id="4_ilnn0"]
 [ext_resource type="PackedScene" path="res://door.tscn" id="5_qvs3x"]
+[ext_resource type="PackedScene" uid="uid://biker2llj4bdg" path="res://main_menu.tscn" id="7_w3oe5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8uu5"]
 texture = ExtResource("4_0oqap")
@@ -1503,6 +1504,10 @@ position = Vector2(542, 430)
 
 [node name="Door" parent="." instance=ExtResource("5_qvs3x")]
 position = Vector2(833, 416)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MainMenu" parent="." instance=ExtResource("7_w3oe5")]
 
 [connection signal="key_collected" from="Cat" to="." method="_on_cat_key_collected"]
 [connection signal="key_collected" from="Cat" to="Door" method="_on_cat_key_collected"]

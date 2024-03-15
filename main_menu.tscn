@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://biker2llj4bdg"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_686gp"]
+[ext_resource type="Texture2D" uid="uid://l5ck5dap1ilu" path="res://tempbackground.jpg" id="2_m6hry"]
+
+[sub_resource type="SystemFont" id="SystemFont_upnvl"]
+font_names = PackedStringArray("OCR A")
+
+[sub_resource type="SystemFont" id="SystemFont_0yrhv"]
+font_names = PackedStringArray("OCR A")
+
+[sub_resource type="SystemFont" id="SystemFont_ftdhu"]
+font_names = PackedStringArray("OCR A")
+
+[sub_resource type="SystemFont" id="SystemFont_1unp8"]
+font_names = PackedStringArray("OCR A")
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_686gp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_m6hry")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -174.0
+offset_right = 270.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
+theme_override_colors/font_shadow_color = Color(0.156863, 0.494118, 0.713726, 1)
+theme_override_fonts/font = SubResource("SystemFont_upnvl")
+theme_override_font_sizes/font_size = 100
+text = "Purrunzel"
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
+theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
+theme_override_fonts/font = SubResource("SystemFont_0yrhv")
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 531.0
+offset_top = 448.0
+offset_right = 635.0
+offset_bottom = 511.0
+theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
+theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
+theme_override_fonts/font = SubResource("SystemFont_ftdhu")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="KeybindsButton" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.5
+offset_top = 375.0
+offset_right = 105.5
+offset_bottom = 438.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
+theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
+theme_override_fonts/font = SubResource("SystemFont_1unp8")
+theme_override_font_sizes/font_size = 40
+text = "Keybinds"
+
+[node name="KeybindsLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.0
+offset_top = -56.0
+offset_right = 214.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
+theme_override_colors/font_shadow_color = Color(0.156863, 0.494118, 0.713726, 1)
+theme_override_font_sizes/font_size = 40
+text = "W - Jump/Wall Bounce
+A - Move Left
+D - Move Right"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 534.0
+offset_top = 450.0
+offset_right = 634.0
+offset_bottom = 513.0
+theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
+theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="KeybindsButton" to="." method="_on_keybinds_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
