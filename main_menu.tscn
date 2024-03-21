@@ -33,9 +33,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -270.0
-offset_top = -174.0
+offset_top = -190.0
 offset_right = 270.0
-offset_bottom = -51.0
+offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
@@ -51,9 +51,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = -25.0
+offset_top = -36.0
 offset_right = 64.0
-offset_bottom = 38.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
@@ -64,9 +64,9 @@ text = "Start"
 
 [node name="QuitButton" type="Button" parent="."]
 offset_left = 531.0
-offset_top = 448.0
+offset_top = 464.0
 offset_right = 635.0
-offset_bottom = 511.0
+offset_bottom = 527.0
 theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
 theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
 theme_override_fonts/font = SubResource("SystemFont_ftdhu")
@@ -78,9 +78,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -94.5
-offset_top = 375.0
+offset_top = 385.0
 offset_right = 105.5
-offset_bottom = 438.0
+offset_bottom = 448.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
 theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
@@ -95,9 +95,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -209.0
-offset_top = -56.0
+offset_top = -101.0
 offset_right = 214.0
-offset_bottom = 115.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
@@ -105,15 +105,16 @@ theme_override_colors/font_shadow_color = Color(0.156863, 0.494118, 0.713726, 1)
 theme_override_font_sizes/font_size = 40
 text = "W - Jump/Wall Bounce
 A - Move Left
-D - Move Right"
+D - Move Right
+S - Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = 534.0
-offset_top = 450.0
-offset_right = 634.0
-offset_bottom = 513.0
+offset_left = 533.0
+offset_top = 465.0
+offset_right = 633.0
+offset_bottom = 528.0
 theme_override_colors/font_color = Color(0.796078, 0.337255, 0.458824, 1)
 theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
 theme_override_font_sizes/font_size = 40

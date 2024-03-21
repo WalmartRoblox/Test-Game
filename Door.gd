@@ -19,5 +19,5 @@ func _on_interaction_vinicity_area_entered(area):
 func _on_interaction_vinicinty_area_exited(area):
 	$AnimatedSprite2D.play("Closed")
 
-func _on_cat_key_collected():
+func _on_key_key_collected():
 	can_open_door = true

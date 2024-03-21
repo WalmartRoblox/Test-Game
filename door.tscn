@@ -28,7 +28,7 @@ radius = 20.6667
 
 [node name="Door" type="Node2D"]
 position = Vector2(658, 368)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.015, 2.015)
 script = ExtResource("1_bf4rp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

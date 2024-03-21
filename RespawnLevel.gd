@@ -1,5 +1,5 @@
-extends Node2D
-signal key_collected
+extends Area2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,5 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_queued_for_deletion():
-		key_collected.emit()
+	pass
+

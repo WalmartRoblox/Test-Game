@@ -2,10 +2,8 @@ extends CharacterBody2D
 
 @export var speed= 400 #speed
 @export var gravity = 20#gravit
-@export var jump = 500 #jump force
+@export var jump = 600 #jump force
 @export var termVol =1000#terminal velocity
-
-signal key_collected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,7 +49,6 @@ func _process(delta):
 		for body in $"Intereaction_Vicinity".get_overlapping_areas():
 			if body.is_in_group("keys"):
 				print("got key")
-				key_collected.emit()
 				body.queue_free()
 	
 

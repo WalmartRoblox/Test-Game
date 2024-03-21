@@ -13,3 +13,6 @@ func _process(delta):
 	$Camera2D.set_offset($Cat.get_position())
 
 	
+func _on_respawn_level_body_entered(body):
+	$Cat.set_position(Vector2(606,248))
+	$Camera2D.set_offset($Cat.get_position())
