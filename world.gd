@@ -9,10 +9,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Input.is_action_just_pressed("Respawn")):
-		$Cat.set_position(Vector2(606,248))
+		$Cat.set_position(Vector2(-1300,50))
 	$Camera2D.set_offset($Cat.get_position())
 
 	
 func _on_respawn_level_body_entered(body):
-	$Cat.set_position(Vector2(606,248))
+	$Cat.set_position(Vector2(-1300,50))
 	$Camera2D.set_offset($Cat.get_position())
