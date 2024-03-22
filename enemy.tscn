@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0d62seqwevpm"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_k2auu"]
+[ext_resource type="Texture2D" uid="uid://bwxk3oaf8e0le" path="res://Sprites/0c27387d-41c9-47b1-a08c-10d660c310f2.png" id="2_d022m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5mhw"]
+size = Vector2(99, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pm7u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d022m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="PathFollow2D"]
+script = ExtResource("1_k2auu")
+
+[node name="EnemyColision" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyColision"]
+position = Vector2(-2.5, -4)
+shape = SubResource("RectangleShape2D_j5mhw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemyColision"]
+modulate = Color(1, 0, 1, 1)
+sprite_frames = SubResource("SpriteFrames_pm7u8")

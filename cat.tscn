@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhvqxpvj0w7uj"]
+[gd_scene load_steps=8 format=3 uid="uid://dhvqxpvj0w7uj"]
 
 [ext_resource type="Script" path="res://cat.gd" id="1_1dyk3"]
 [ext_resource type="Texture2D" uid="uid://bwxk3oaf8e0le" path="res://Sprites/0c27387d-41c9-47b1-a08c-10d660c310f2.png" id="2_diwuv"]
 [ext_resource type="AudioStream" uid="uid://tdiwo7pqilic" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Audio_bounce_1.mp3" id="3_n7p6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y10p"]
+size = Vector2(52, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ya2o"]
+size = Vector2(101, 237)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gs8hm"]
 animations = [{
@@ -15,9 +21,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ya2o"]
-size = Vector2(101, 237)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_6v36k"]
 radius = 102.176
 
@@ -26,14 +29,20 @@ position = Vector2(606, 248)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_1dyk3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_gs8hm")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -2)
+shape = SubResource("RectangleShape2D_1y10p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -2)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_6ya2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gs8hm")
 
 [node name="jump_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -44,6 +53,7 @@ wait_time = 0.5
 shape = SubResource("CircleShape2D_6v36k")
 
 [node name="Label" type="Label" parent="."]
+z_index = 1
 offset_left = -914.0
 offset_top = -206.0
 offset_right = -468.0
@@ -57,4 +67,5 @@ volume_db = -24.33
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]

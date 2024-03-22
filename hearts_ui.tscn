@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0rq6ttqvwqr"]
+
+[ext_resource type="Script" path="res://HeartsUI.gd" id="1_6moc6"]
+[ext_resource type="Texture2D" uid="uid://b7blmp20k63by" path="res://Sprites/Drawing-2.sketchpad (1).png" id="2_duh6c"]
+
+[node name="HeartsUI" type="CanvasLayer"]
+script = ExtResource("1_6moc6")
+
+[node name="Hearts" type="TextureRect" parent="."]
+offset_right = 29.0
+offset_bottom = 26.0
+texture = ExtResource("2_duh6c")
+stretch_mode = 1

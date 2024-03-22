@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var gravity = 20#gravit
 @export var jump = 600 #jump force
 @export var termVol =1000#terminal velocity
+var health = 9
+signal hit(health)
+signal dead()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,8 +29,6 @@ func _process(delta):
 	
 	#currently only allows the player to jump when it's on a platform, and after a certain amount of time(cooldown)
 	if (Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_wall())):
-		if(is_on_wall() and Input.is_action_just_pressed("walk_right")):
-			jumpRight=100
 		velocity.y = -jump
 		$jump_timer.start()
 		$Jump.play()
@@ -38,7 +39,8 @@ func _process(delta):
 	$Label.set_text("gravity: " + str(gravity)+
 					"\nspeed: " + str(speed)+
 					"\ntermVol: " + str(termVol)+
-					"\njump: " + str(jump))
+					"\njump: " + str(jump)+
+					"\nHealth: " + str(health))
 	
 	var horizontal_direction = Input.get_axis("walk_left","walk_right")
 	velocity.x = speed *horizontal_direction+jumpLeft+jumpRight
@@ -56,3 +58,15 @@ func _process(delta):
 func _on_jump_timer_timeout():
 	$jump_timer.stop()
 
+
+func _on_area_2d_area_entered(area):
+	if(area.name=="EnemyColision"):
+		health -=1
+		hit.emit(health)
+		if(health==0):
+			dead.emit()
+			health =9
+	print("hit "+ area.name)
+
+func setHealth(value):
+	health = value

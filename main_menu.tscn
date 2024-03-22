@@ -5,15 +5,19 @@
 
 [sub_resource type="SystemFont" id="SystemFont_upnvl"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_0yrhv"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_ftdhu"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_1unp8"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_686gp")
@@ -120,7 +124,15 @@ theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
 theme_override_font_sizes/font_size = 40
 text = "Back"
 
+[node name="Died" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "YOU DIED"
+
+[node name="Timer" type="Timer" parent="Died"]
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="KeybindsButton" to="." method="_on_keybinds_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="Died/Timer" to="." method="_on_timer_timeout"]
