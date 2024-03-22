@@ -31,11 +31,12 @@ script = ExtResource("1_hdbn5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hvod4")
-animation = &"on"
+animation = &"off"
 
 [node name="Interaction_Vincinity" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Vincinity"]
 shape = SubResource("CircleShape2D_lkj4r")
 
-[connection signal="area_entered" from="Interaction_Vincinity" to="." method="_on_interact_vincinity_area_entered"]
+[connection signal="area_entered" from="Interaction_Vincinity" to="." method="_on_interaction_vincinity_area_entered"]
+[connection signal="area_exited" from="Interaction_Vincinity" to="." method="_on_interaction_vincinity_area_exited"]

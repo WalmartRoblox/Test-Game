@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://l5ck5dap1ilu" path="res://tempbackground.jpg" id="2_6tgbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umynt"]
-size = Vector2(2, 7)
+size = Vector2(40, 361)
 
 [node name="Gate" type="Node2D"]
 script = ExtResource("1_i6ivc")
@@ -12,10 +12,10 @@ script = ExtResource("1_i6ivc")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -0.5)
+position = Vector2(4, -0.5)
 shape = SubResource("RectangleShape2D_umynt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.49012e-08, -0.5)
-scale = Vector2(0.00277778, 0.0194444)
+position = Vector2(4, 1)
+scale = Vector2(0.0583333, 1)
 texture = ExtResource("2_6tgbe")

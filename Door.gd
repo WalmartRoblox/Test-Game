@@ -20,8 +20,8 @@ func _on_interaction_vinicity_area_entered(area):
 		if Input.is_action_just_pressed("interact"):
 			print("move to next level")
 
-func _on_interaction_vinicinty_area_exited(area):
-	$AnimatedSprite2D.play("Closed")
-
 func _on_key_key_collected():
 	keys_collected += 1
+
+func _on_interaction_vincinity_area_exited(area):
+	$AnimatedSprite2D.play("Closed")
