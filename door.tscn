@@ -43,4 +43,4 @@ position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_vf5wu")
 
 [connection signal="area_entered" from="Interaction_Vincinity" to="." method="_on_interaction_vinicity_area_entered"]
-[connection signal="area_exited" from="Interaction_Vincinity" to="." method="_on_interaction_vinicity_area_exited"]
+[connection signal="area_exited" from="Interaction_Vincinity" to="." method="_on_interaction_vincinity_area_exited"]
