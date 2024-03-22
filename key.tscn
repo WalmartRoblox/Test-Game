@@ -30,3 +30,5 @@ sprite_frames = SubResource("SpriteFrames_23x8j")
 position = Vector2(1.68005, -5.59998)
 scale = Vector2(0.0784, 0.0784)
 shape = SubResource("CircleShape2D_w38b0")
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

@@ -5,15 +5,19 @@
 
 [sub_resource type="SystemFont" id="SystemFont_upnvl"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_0yrhv"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_ftdhu"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_1unp8"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_686gp")

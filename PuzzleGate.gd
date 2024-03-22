@@ -1,5 +1,5 @@
-extends Area2D
-signal key_collected
+extends StaticBody2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,5 +10,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_tree_exited():
-	key_collected.emit()
+func move_gate():
+	move_and_collide()
