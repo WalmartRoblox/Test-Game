@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://biker2llj4bdg"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_686gp"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_686gp"]
 [ext_resource type="Texture2D" uid="uid://l5ck5dap1ilu" path="res://tempbackground.jpg" id="2_m6hry"]
 
 [sub_resource type="SystemFont" id="SystemFont_upnvl"]
@@ -124,15 +124,7 @@ theme_override_colors/font_hover_color = Color(0.156863, 0.494118, 0.713726, 1)
 theme_override_font_sizes/font_size = 40
 text = "Back"
 
-[node name="Died" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "YOU DIED"
-
-[node name="Timer" type="Timer" parent="Died"]
-
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="KeybindsButton" to="." method="_on_keybinds_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="timeout" from="Died/Timer" to="." method="_on_timer_timeout"]

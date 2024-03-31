@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://dphnnel87ujw5"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_37yui"]
+[ext_resource type="PackedScene" uid="uid://y4o6258x7yq5" path="res://Scenes/level1.tscn" id="2_t1f4l"]
+[ext_resource type="PackedScene" uid="uid://dhvqxpvj0w7uj" path="res://Scenes/cat.tscn" id="7_idkuw"]
+[ext_resource type="PackedScene" uid="uid://biker2llj4bdg" path="res://Scenes/main_menu.tscn" id="7_w3oe5"]
+[ext_resource type="Script" path="res://Scripts/RespawnLevel.gd" id="8_nq5kb"]
+[ext_resource type="PackedScene" uid="uid://k0rq6ttqvwqr" path="res://Scenes/hearts_ui.tscn" id="11_qb5vv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kx14"]
+size = Vector2(4058, 94)
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_37yui")
+
+[node name="level1" parent="." instance=ExtResource("2_t1f4l")]
+
+[node name="MainMenu" parent="." instance=ExtResource("7_w3oe5")]
+
+[node name="HeartsUI" parent="." instance=ExtResource("11_qb5vv")]
+
+[node name="RespawnLevel" type="Area2D" parent="."]
+position = Vector2(-8, 876)
+script = ExtResource("8_nq5kb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLevel"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(170, -38)
+shape = SubResource("RectangleShape2D_5kx14")
+
+[node name="Cat" parent="." instance=ExtResource("7_idkuw")]
+position = Vector2(-1377, 85)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="body_entered" from="RespawnLevel" to="." method="_on_respawn_level_body_entered"]
+[connection signal="dead" from="Cat" to="." method="_on_cat_dead"]

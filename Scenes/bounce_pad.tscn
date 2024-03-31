@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkvwqewp7u55n"]
+
+[ext_resource type="Script" path="res://Scripts/Bounce_pad.gd" id="1_xn2xa"]
+[ext_resource type="Texture2D" uid="uid://0756pmie2bj8" path="res://pixil-frame-0.png" id="2_tndib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nyk0"]
+size = Vector2(18, 11)
+
+[node name="Bounce_pad" type="Area2D"]
+script = ExtResource("1_xn2xa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_0nyk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, 9)
+scale = Vector2(1.05, 1.03)
+texture = ExtResource("2_tndib")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

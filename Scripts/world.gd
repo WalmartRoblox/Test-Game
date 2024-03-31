@@ -1,7 +1,7 @@
 extends Node2D
 var speed
-@onready var player = $level1/Cat
-@onready var camera = $level1/Camera2D
+@onready var player = $Cat
+@onready var camera = $Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,5 +18,7 @@ func _on_respawn_level_body_entered(body):
 	player.set_position(Vector2(-1300,50))
 	camera.set_offset(player.get_position())
 
+
 func _on_cat_dead():
 	player.set_position(Vector2(-1300,50))
+	

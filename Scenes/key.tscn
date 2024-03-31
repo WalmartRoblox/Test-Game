@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://biaojwgb3vrdk"]
 
-[ext_resource type="Script" path="res://key.gd" id="1_1mlf3"]
+[ext_resource type="Script" path="res://Scripts/key.gd" id="1_1mlf3"]
 [ext_resource type="Texture2D" uid="uid://d1f0y0v7262uy" path="res://Sprites/door-key-vintage-game-pixel-art-vector-47158822-removebg-preview.png" id="2_d5i41"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_23x8j"]
