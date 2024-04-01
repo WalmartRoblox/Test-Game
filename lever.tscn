@@ -31,7 +31,7 @@ script = ExtResource("1_hdbn5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hvod4")
-animation = &"off"
+animation = &"on"
 
 [node name="Interaction_Vincinity" type="Area2D" parent="."]
 

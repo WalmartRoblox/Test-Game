@@ -9,11 +9,11 @@ signal leave
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("Closed")
-	keys = get_node("Keys").get_children()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (keys.size() == keys_collected):
+	keys = get_node("Keys").get_children()
+	if (keys.size() == 0):
 		can_open_door = true
 	if can_open_door and Input.is_action_just_pressed("interact"):
 		leave.emit()

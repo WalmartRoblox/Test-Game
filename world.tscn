@@ -1,21 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dphnnel87ujw5"]
+[gd_scene load_steps=8 format=3 uid="uid://dphnnel87ujw5"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_37yui"]
 [ext_resource type="PackedScene" uid="uid://y4o6258x7yq5" path="res://level1.tscn" id="2_t1f4l"]
 [ext_resource type="PackedScene" uid="uid://dhvqxpvj0w7uj" path="res://cat.tscn" id="7_gb8jk"]
 [ext_resource type="PackedScene" uid="uid://biker2llj4bdg" path="res://main_menu.tscn" id="7_w3oe5"]
 [ext_resource type="Script" path="res://RespawnLevel.gd" id="8_nq5kb"]
-[ext_resource type="PackedScene" uid="uid://d0d62seqwevpm" path="res://enemy.tscn" id="9_srb5y"]
 [ext_resource type="PackedScene" uid="uid://k0rq6ttqvwqr" path="res://hearts_ui.tscn" id="11_qb5vv"]
 
-[sub_resource type="Curve2D" id="Curve2D_mysyj"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -34, -52, 0, 0, 0, 0, 238, -52, 0, 0, 0, 0, -34, -52)
-}
-point_count = 3
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kx14"]
-size = Vector2(4058, 94)
+size = Vector2(5316, 512)
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_37yui")
@@ -27,25 +20,18 @@ visible = false
 
 [node name="HeartsUI" parent="." instance=ExtResource("11_qb5vv")]
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_mysyj")
-
-[node name="Enemy" parent="Path2D" instance=ExtResource("9_srb5y")]
-position = Vector2(-34, -52)
-scale = Vector2(0.815, 0.815)
-rotates = false
-
 [node name="RespawnLevel" type="Area2D" parent="."]
 position = Vector2(-8, 876)
 script = ExtResource("8_nq5kb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnLevel"]
 modulate = Color(0, 0, 1, 1)
-position = Vector2(170, -38)
+position = Vector2(28, 351)
 shape = SubResource("RectangleShape2D_5kx14")
 
 [node name="Cat" parent="." instance=ExtResource("7_gb8jk")]
-position = Vector2(951, 258)
+position = Vector2(-1416, 97)
+scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
