@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dphnnel87ujw5"]
+[gd_scene load_steps=10 format=3 uid="uid://dphnnel87ujw5"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_37yui"]
 [ext_resource type="PackedScene" uid="uid://y4o6258x7yq5" path="res://level1.tscn" id="2_t1f4l"]
+[ext_resource type="PackedScene" uid="uid://dhvqxpvj0w7uj" path="res://cat.tscn" id="7_gb8jk"]
 [ext_resource type="PackedScene" uid="uid://biker2llj4bdg" path="res://main_menu.tscn" id="7_w3oe5"]
 [ext_resource type="Script" path="res://RespawnLevel.gd" id="8_nq5kb"]
 [ext_resource type="PackedScene" uid="uid://d0d62seqwevpm" path="res://enemy.tscn" id="9_srb5y"]
@@ -43,4 +44,10 @@ modulate = Color(0, 0, 1, 1)
 position = Vector2(170, -38)
 shape = SubResource("RectangleShape2D_5kx14")
 
+[node name="Cat" parent="." instance=ExtResource("7_gb8jk")]
+position = Vector2(951, 258)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="change_to_level2" from="level1" to="." method="_on_level_1_change_to_level_2"]
 [connection signal="body_entered" from="RespawnLevel" to="." method="_on_respawn_level_body_entered"]
