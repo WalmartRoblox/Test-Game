@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://biaojwgb3vrdk" path="res://Scenes/key.tscn" id="4_70m0j"]
 [ext_resource type="PackedScene" uid="uid://d0d62seqwevpm" path="res://Scenes/enemy.tscn" id="6_v3bui"]
 [ext_resource type="PackedScene" uid="uid://bkvwqewp7u55n" path="res://Scenes/bounce_pad.tscn" id="7_5ikwh"]
-[ext_resource type="Texture2D" uid="uid://b3eqfgp38w2kw" path="res://water.png" id="8_jqcoc"]
+[ext_resource type="Texture2D" uid="uid://qu65blgln23d" path="res://water2png.png" id="8_3y664"]
 [ext_resource type="Texture2D" uid="uid://80fyh4okwa5" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0.png" id="9_p6wgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8uu5"]
@@ -1539,8 +1539,8 @@ position = Vector2(71.5, -79)
 shape = SubResource("RectangleShape2D_k1pxy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Water"]
-position = Vector2(74, 203)
-scale = Vector2(47.18, 7.44)
-texture = ExtResource("8_jqcoc")
+position = Vector2(508, 53)
+scale = Vector2(38.135, 4.335)
+texture = ExtResource("8_3y664")
 
 [connection signal="key_collected" from="Door/Keys/key" to="Door" method="_on_key_key_collected"]
