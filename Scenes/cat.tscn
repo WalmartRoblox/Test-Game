@@ -243,7 +243,6 @@ position = Vector2(-0.71, -4.62)
 shape = SubResource("CircleShape2D_6v36k")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-914, -206)
 stream = ExtResource("3_n7p6m")
 volume_db = -24.33
 
