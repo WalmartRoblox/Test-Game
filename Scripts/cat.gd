@@ -71,12 +71,14 @@ func _on_jump_timer_timeout():
 
 
 func _on_area_2d_area_entered(area):
-	if(area.name=="EnemyColision"):
+	if(area.name=="EnemyColision" or area.name=="WaterArea"):
 		health -=1
 		hit.emit(health)
 		if(health==0):
 			dead.emit()
 			health =9
+		if area.name=="Water":
+			velocity.y = -1500	
 	print("hit "+ area.name)
 
 func setHealth(value):

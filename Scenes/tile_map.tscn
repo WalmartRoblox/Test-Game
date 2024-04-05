@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://80fyh4okwa5" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0.png" id="1_imunf"]
 [ext_resource type="Texture2D" uid="uid://c6wxypuyoupd4" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl1.png" id="2_jxqq7"]
-[ext_resource type="Script" path="res://TileMap.gd" id="2_kgrnt"]
+[ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_kgrnt"]
 [ext_resource type="Texture2D" uid="uid://cj7654shdccqm" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl2.png" id="3_2qv8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ia7u"]
