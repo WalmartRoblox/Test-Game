@@ -243,13 +243,6 @@ wait_time = 0.5
 position = Vector2(-0.71, -4.62)
 shape = SubResource("CircleShape2D_6v36k")
 
-[node name="Label" type="Label" parent="."]
-z_index = 1
-offset_left = -914.0
-offset_top = -206.0
-offset_right = -468.0
-offset_bottom = -114.0
-
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-914, -206)
 stream = ExtResource("3_n7p6m")
@@ -257,6 +250,10 @@ volume_db = -24.33
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
