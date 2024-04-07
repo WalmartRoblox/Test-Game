@@ -35,11 +35,12 @@ func _process(delta):
 		flip = false
 	#currently only allows the player to jump when it's on a platform, and after a certain amount of time(cooldown)
 	if (Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_wall())):
+		$AnimatedSprite2D.play("jump")
 		velocity.y = -jump
 		$jump_timer.start()
 		$Jump.play()
 		$AnimatedSprite2D.flip_h = flip
-		$AnimatedSprite2D.play("jump")
+		
 	elif (Input.is_action_just_pressed("walk_right") or Input.is_action_just_pressed("walk_left")):
 		$AnimatedSprite2D.flip_h = flip
 		$AnimatedSprite2D.play("run")

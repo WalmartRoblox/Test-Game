@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpvhm52odq8d1"]
+
+[ext_resource type="Script" path="res://Scripts/BouceBed.gd" id="1_xp1yc"]
+[ext_resource type="Texture2D" uid="uid://dfct1jumaqucf" path="res://Sprites/bed.png" id="2_ncyyt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ac1ng"]
+size = Vector2(21.1953, 7.69447)
+
+[node name="BouceBed" type="Node2D"]
+scale = Vector2(-4.45899, 5.62951)
+script = ExtResource("1_xp1yc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.308321, 0.323471)
+texture = ExtResource("2_ncyyt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 1.45907)
+scale = Vector2(1.32105, 1.18031)
+shape = SubResource("RectangleShape2D_ac1ng")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
