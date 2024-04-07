@@ -12,7 +12,6 @@ script = ExtResource("1_yrghx")
 [node name="level1" parent="." instance=ExtResource("2_fn24t")]
 
 [node name="MainMenu" parent="." instance=ExtResource("3_x7plb")]
-visible = false
 
 [node name="HeartsUI" parent="." instance=ExtResource("4_74yar")]
 
