@@ -6,6 +6,10 @@ var lever_code = ""
 func _ready():
 	levers = get_node("Levers").get_children()
 	lever_code = ""
+	print(levers)
+	for lever in levers:
+		lever_code += lever.status
+	print(lever_code)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

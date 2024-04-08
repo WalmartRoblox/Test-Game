@@ -35,5 +35,23 @@ func _on_level_1_change_to_level_2():
 	spawn_position = Vector2(399,269)
 
 	#sets new player position
-	player.set_position(Vector2(399,269))
+	player.set_position(spawn_position)
+	camera.set_offset(player.get_position())
+	
+	level2_node.change_to_level3.connect(_on_level_2_change_to_level_3)
+	
+
+func _on_level_2_change_to_level_3():
+		#loads the level 2 onto the world scene
+	var level3_ressource = load("res://Scenes/level_3.tscn") 
+	var level3_node = level3_ressource.instantiate() 
+	self.add_child(level3_node)
+	
+	#moves newly added node to the same location as the previous level node
+	move_child($level3, 0)
+	
+	#sets the new spawn position for level 2
+	spawn_position = Vector2(-265, -48)
+	#sets new player position
+	player.set_position(Vector2(-265, -48))
 	camera.set_offset(player.get_position())
