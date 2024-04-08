@@ -232,7 +232,7 @@ shape = SubResource("RectangleShape2D_wuio5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gs8hm")
 animation = &"run"
-frame_progress = 0.81622
+frame_progress = 0.0787917
 
 [node name="jump_timer" type="Timer" parent="."]
 wait_time = 0.5
