@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed= 400 #speed
+@export var speed= 60000 #speed
 @export var GRAVITY = 1000#gravit
 @export var jump = 500 #jump force
 @export var termVol =1000#terminal velocity
@@ -37,7 +37,7 @@ func _process(delta):
 	if(heli_hat):
 		$AnimatedSprite2D/Hat.show()
 	#player control and info
-	movement()
+	movement(delta)
 	jumping()
 	if(is_on_floor() or is_on_wall()):
 		heli_jumps=1
@@ -59,8 +59,8 @@ func get_input_direction():
 	var input_dir = Vector2.ZERO
 	input_dir = (Input.get_action_strength("walk_right") -Input.get_action_strength("walk_left"))
 	return input_dir
-func movement():
-	velocity.x = get_input_direction() *speed
+func movement(del):
+	velocity.x = get_input_direction() * speed * del
 func interact():
 	if (Input.is_action_just_pressed("interact")):
 		for body in $"Intereaction_Vicinity".get_overlapping_areas():
@@ -84,22 +84,31 @@ func _on_area_2d_area_entered(area):
 			velocity.y = -1500	
 	print("hit "+ area.name)
 func jumping():
-	if(Input.is_action_just_pressed("jump")):
+	if(Input.is_action_just_pressed("jump") and $Jump_timer.is_stopped()):
 		if(is_on_floor()):
 			$AnimatedSprite2D.play("jump")
 			$Jump.play()
 			velocity.y=-jump
 			jumped=true
+			$jump_timer.start()
+			
 		elif(is_on_wall()):
 			$AnimatedSprite2D.play("jump")
 			$Jump.play()
-			velocity.y=-jump
 			jumped=true
+			$jump_timer.start()
+			velocity.y=-jump
+			if(get_input_direction()==-1):
+				velocity.x=-speed
+			elif(get_input_direction()==1):
+				velocity.x=speed
+			
 		if(heli_hat and heli_jumps>0):
 			$AnimatedSprite2D.play("jump")
 			$Jump.play()
 			heli_jumps-=1
 			velocity.y=-jump
 			jumped = false
+			$jump_timer.start()
 func setHealth(value):
 	health = value

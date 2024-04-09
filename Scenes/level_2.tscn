@@ -1597,6 +1597,7 @@ layer_0/tile_data = PackedInt32Array(1376256, 0, 16, 1441792, 0, 17, 1507328, 0,
 
 [node name="HelicopterHat" parent="." instance=ExtResource("12_1awv1")]
 position = Vector2(1086, 516)
+scale = Vector2(2.39, 2.39)
 
 [node name="Level2Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_n07i7")

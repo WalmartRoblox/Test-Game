@@ -258,10 +258,10 @@ max_distance = 100000.0
 [node name="Walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_smheb")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+[node name="Jump_timer" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -84.0
 offset_top = -72.0
 offset_right = 304.0
