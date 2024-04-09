@@ -22,3 +22,8 @@ func _on_respawn_level_area_entered(area):
 func died():
 	player.position = Vector2(-265, -48)
 	
+
+
+func _on_door_finished():
+	$CanvasLayer/TextureRect.show()
+	set_process_input(false)

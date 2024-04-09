@@ -1610,13 +1610,13 @@ volume_db = -10.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-visible = false
 offset_left = -57.0
-offset_top = 30.0
-offset_right = 1095.0
-offset_bottom = 678.0
+offset_top = -1.0
+offset_right = 1150.0
+offset_bottom = 649.0
 texture = ExtResource("11_pcqed")
 
+[connection signal="finished" from="Door" to="." method="_on_door_finished"]
 [connection signal="flipped" from="Gate2/Levers/Lever" to="Gate2" method="_on_lever_flipped"]
 [connection signal="flipped" from="Gate3/Levers/Lever" to="Gate3" method="_on_lever_flipped"]
 [connection signal="flipped" from="Gate4/Levers/Lever" to="Gate4" method="_on_lever_flipped"]
