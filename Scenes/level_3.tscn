@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bexqk43n3268o"]
+[gd_scene load_steps=14 format=3 uid="uid://bexqk43n3268o"]
 
 [ext_resource type="Script" path="res://Scripts/Level3.gd" id="1_iu1nl"]
 [ext_resource type="PackedScene" uid="uid://ddm58elx4kfkg" path="res://Scenes/tile_map.tscn" id="2_jm8ht"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ufgl0e522wg" path="res://Scenes/water.tscn" id="8_o7bsn"]
 [ext_resource type="Texture2D" uid="uid://80fyh4okwa5" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0.png" id="9_48pyq"]
 [ext_resource type="AudioStream" uid="uid://1bb1a3amye3" path="res://Audio/themesongv2.wav" id="10_cq1vp"]
+[ext_resource type="Texture2D" uid="uid://bw05k01fhlg0t" path="res://Drawing-1.sketchpad.png" id="11_pcqed"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpg0j"]
 texture = ExtResource("9_48pyq")
@@ -1605,6 +1606,16 @@ layer_0/tile_data = PackedInt32Array(-4194328, 0, 0, -4128792, 0, 1, -4063256, 0
 [node name="Level3Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_cq1vp")
 volume_db = -10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = -57.0
+offset_top = 30.0
+offset_right = 1095.0
+offset_bottom = 678.0
+texture = ExtResource("11_pcqed")
 
 [connection signal="flipped" from="Gate2/Levers/Lever" to="Gate2" method="_on_lever_flipped"]
 [connection signal="flipped" from="Gate3/Levers/Lever" to="Gate3" method="_on_lever_flipped"]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed= 60000 #speed
 @export var GRAVITY = 1000#gravit
-@export var jump = 500 #jump force
+@export var jump = 70000 #jump force
 @export var termVol =1000#terminal velocity
 @export var acc = 50
 var jumped = false
@@ -38,7 +38,7 @@ func _process(delta):
 		$AnimatedSprite2D/Hat.show()
 	#player control and info
 	movement(delta)
-	jumping()
+	jumping(delta)
 	if(is_on_floor() or is_on_wall()):
 		heli_jumps=1
 	if(get_input_direction()>=0):
@@ -83,12 +83,12 @@ func _on_area_2d_area_entered(area):
 		if area.name=="Water":
 			velocity.y = -1500	
 	print("hit "+ area.name)
-func jumping():
+func jumping(delta):
 	if(Input.is_action_just_pressed("jump") and $Jump_timer.is_stopped()):
 		if(is_on_floor()):
 			$AnimatedSprite2D.play("jump")
 			$Jump.play()
-			velocity.y=-jump
+			velocity.y=-jump * delta
 			jumped=true
 			$jump_timer.start()
 			
@@ -97,17 +97,17 @@ func jumping():
 			$Jump.play()
 			jumped=true
 			$jump_timer.start()
-			velocity.y=-jump
+			velocity.y=-jump * delta
 			if(get_input_direction()==-1):
-				velocity.x=-speed
+				velocity.x+=100000 * delta
 			elif(get_input_direction()==1):
-				velocity.x=speed
+				velocity.x+=-100000 * delta
 			
 		if(heli_hat and heli_jumps>0):
 			$AnimatedSprite2D.play("jump")
 			$Jump.play()
 			heli_jumps-=1
-			velocity.y=-jump
+			velocity.y=-jump * delta
 			jumped = false
 			$jump_timer.start()
 func setHealth(value):
