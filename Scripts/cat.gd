@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed= 60000 #speed
-@export var GRAVITY = 1000#gravit
-@export var jump = 70000 #jump force
+@export var speed= 60000#speed
+@export var GRAVITY = 1700#gravit
+@export var jump = 95000 #jump force
 @export var termVol =1000#terminal velocity
 @export var acc = 50
 var jumped = false
@@ -53,14 +53,12 @@ func _process(delta):
 	interact()
 	debugInfo()
 #to add a cooldown on jumping so the player can't spam jump
-func _on_jump_timer_timeout():
-	$jump_timer.stop()
 func get_input_direction():
 	var input_dir = Vector2.ZERO
 	input_dir = (Input.get_action_strength("walk_right") -Input.get_action_strength("walk_left"))
 	return input_dir
-func movement(del):
-	velocity.x = get_input_direction() * speed * del
+func movement(delta):
+	velocity.x = get_input_direction() * speed *delta
 func interact():
 	if (Input.is_action_just_pressed("interact")):
 		for body in $"Intereaction_Vicinity".get_overlapping_areas():
@@ -88,7 +86,7 @@ func jumping(delta):
 		if(is_on_floor()):
 			$AnimatedSprite2D.play("jump")
 			$Jump.play()
-			velocity.y=-jump * delta
+			velocity.y =-jump *delta
 			jumped=true
 			$jump_timer.start()
 			
@@ -97,17 +95,17 @@ func jumping(delta):
 			$Jump.play()
 			jumped=true
 			$jump_timer.start()
-			velocity.y=-jump * delta
+			velocity.y =-jump *delta
 			if(get_input_direction()==-1):
-				velocity.x+=100000 * delta
+				velocity.x+=200
 			elif(get_input_direction()==1):
-				velocity.x+=-100000 * delta
+				velocity.x+=-200 
 			
 		if(heli_hat and heli_jumps>0):
 			$AnimatedSprite2D.play("jump")
 			$Jump.play()
 			heli_jumps-=1
-			velocity.y=-jump * delta
+			velocity.y = -jump *delta
 			jumped = false
 			$jump_timer.start()
 func setHealth(value):

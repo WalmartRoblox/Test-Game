@@ -26,4 +26,3 @@ func died():
 
 func _on_door_finished():
 	$CanvasLayer/TextureRect.show()
-	set_process_input(false)

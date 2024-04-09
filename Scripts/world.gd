@@ -11,7 +11,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Input.is_action_just_pressed("Respawn")):
-		set_process_unhandled_input(false)
 		player.set_position(spawn_position)
 	camera.set_offset(player.get_position())
 	
