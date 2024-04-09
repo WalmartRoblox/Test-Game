@@ -246,6 +246,7 @@ shape = SubResource("CircleShape2D_6v36k")
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_n7p6m")
 volume_db = -24.33
+max_distance = 8000.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

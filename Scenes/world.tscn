@@ -16,6 +16,8 @@ script = ExtResource("1_yrghx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainMenu"]
 stream = ExtResource("4_herqa")
+autoplay = true
+max_distance = 8000.0
 
 [node name="HeartsUI" parent="." instance=ExtResource("4_74yar")]
 

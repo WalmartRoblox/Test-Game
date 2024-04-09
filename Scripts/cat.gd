@@ -86,5 +86,6 @@ func jumping():
 			velocity.y=-jump
 		elif(is_on_wall()):
 			velocity.y=-jump
+		$Jump.play()
 func setHealth(value):
 	health = value
