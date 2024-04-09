@@ -12,6 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and within_vincinity:
+		$LeverFlip.play()
 		if self.status == "1":
 			$AnimatedSprite2D.play("off")
 			self.status = "0"

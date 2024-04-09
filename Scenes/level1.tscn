@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://y4o6258x7yq5"]
+[gd_scene load_steps=21 format=3 uid="uid://y4o6258x7yq5"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_5j6my"]
 [ext_resource type="PackedScene" uid="uid://ddm58elx4kfkg" path="res://Scenes/tile_map.tscn" id="2_3kypf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/DoorLabel.gd" id="10_on8qa"]
 [ext_resource type="Script" path="res://Scripts/Area2D2.gd" id="10_u3fua"]
 [ext_resource type="PackedScene" uid="uid://ufgl0e522wg" path="res://Scenes/water.tscn" id="12_ssc7b"]
+[ext_resource type="AudioStream" uid="uid://1bb1a3amye3" path="res://Audio/themesongv2.wav" id="14_lkuew"]
 
 [sub_resource type="Curve2D" id="Curve2D_0svmp"]
 _data = {
@@ -1613,6 +1614,11 @@ scale = Vector2(6.80169, -1.11892)
 [node name="Water" parent="." instance=ExtResource("12_ssc7b")]
 position = Vector2(2121, 470)
 scale = Vector2(-16.4987, -2.36943)
+
+[node name="Level1Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_lkuew")
+volume_db = -10.0
+max_distance = 10000.0
 
 [connection signal="timeout" from="TextTimer" to="KeyLabel" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="TextTimer" to="EnemyLabel" method="_on_text_timer_timeout"]

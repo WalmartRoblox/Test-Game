@@ -7,6 +7,7 @@ var speed=0.5
 func _ready():
 	if path == null:
 		pass
+	$AnimatedSprite2D.play("walk")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

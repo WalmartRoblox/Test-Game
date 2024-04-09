@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://5v0rdc2g2xli"]
+[gd_scene load_steps=7 format=3 uid="uid://5v0rdc2g2xli"]
 
 [ext_resource type="Script" path="res://Scripts/Lever.gd" id="1_hdbn5"]
 [ext_resource type="Texture2D" uid="uid://ctql4x31q361y" path="res://Sprites/lever off.png" id="2_5wv73"]
 [ext_resource type="Texture2D" uid="uid://ct28e2k3p0yuj" path="res://Sprites/lever on.png" id="3_hr8cf"]
+[ext_resource type="AudioStream" uid="uid://plb2k3r0qb0i" path="res://Audio/walk2.wav" id="4_yx3ht"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hvod4"]
 animations = [{
@@ -37,6 +38,9 @@ animation = &"on"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Vincinity"]
 shape = SubResource("CircleShape2D_lkj4r")
+
+[node name="LeverFlip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yx3ht")
 
 [connection signal="area_entered" from="Interaction_Vincinity" to="." method="_on_interaction_vincinity_area_entered"]
 [connection signal="area_exited" from="Interaction_Vincinity" to="." method="_on_interaction_vincinity_area_exited"]

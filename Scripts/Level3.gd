@@ -9,6 +9,7 @@ func _ready():
 	$Gate5.set_code("1")
 
 	player.dead.connect(died)
+	$Level3Music.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

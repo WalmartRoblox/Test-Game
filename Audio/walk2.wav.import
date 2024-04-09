@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://1bb1a3amye3"
-path="res://.godot/imported/themesongv2.wav-1f16205a9f3bcd6b81940ceaa667e09c.sample"
+uid="uid://plb2k3r0qb0i"
+path="res://.godot/imported/walk2.wav-f0978881d10e7cc1250465880d653c8d.sample"
 
 [deps]
 
-source_file="res://Sprites/themesongv2.wav"
-dest_files=["res://.godot/imported/themesongv2.wav-1f16205a9f3bcd6b81940ceaa667e09c.sample"]
+source_file="res://Audio/walk2.wav"
+dest_files=["res://.godot/imported/walk2.wav-f0978881d10e7cc1250465880d653c8d.sample"]
 
 [params]
 

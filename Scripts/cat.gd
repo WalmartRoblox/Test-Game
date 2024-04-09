@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var acc = 50
 var jumped = false
 var heli_hat = false
-var heli_jumps=2
+var heli_jumps=1
 
 @onready var axis = Vector2.ZERO
 
@@ -39,12 +39,16 @@ func _process(delta):
 	#player control and info
 	movement()
 	jumping()
-	if(is_on_floor()):
-		heli_jumps=2
+	if(is_on_floor() or is_on_wall()):
+		heli_jumps=1
 	if(get_input_direction()>=0):
 		$AnimatedSprite2D.flip_h=false
 	else:
 		$AnimatedSprite2D.flip_h=true
+	if(get_input_direction()==0):
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("run")
 	move_and_slide()
 	interact()
 	debugInfo()
@@ -56,10 +60,7 @@ func get_input_direction():
 	input_dir = (Input.get_action_strength("walk_right") -Input.get_action_strength("walk_left"))
 	return input_dir
 func movement():
-	$AnimatedSprite2D.play("run")
 	velocity.x = get_input_direction() *speed
-	if(get_input_direction() == 0 and not jumped):
-		$AnimatedSprite2D.play("idle")
 func interact():
 	if (Input.is_action_just_pressed("interact")):
 		for body in $"Intereaction_Vicinity".get_overlapping_areas():
@@ -70,7 +71,8 @@ func debugInfo():
 				"\nspeed: " + str(speed)+
 				"\ntermVol: " + str(termVol)+
 				"\njump: " + str(jump)+
-				"\nHealth: " + str(health))
+				"\nHealth: " + str(health)+
+				"\naxis num:" + str(get_input_direction()))
 func _on_area_2d_area_entered(area):
 	if(area.name=="EnemyColision" or area.name=="WaterArea"):
 		health -=1
@@ -83,14 +85,19 @@ func _on_area_2d_area_entered(area):
 	print("hit "+ area.name)
 func jumping():
 	if(Input.is_action_just_pressed("jump")):
-		$AnimatedSprite2D.play("jump")
 		if(is_on_floor()):
+			$AnimatedSprite2D.play("jump")
+			$Jump.play()
 			velocity.y=-jump
 			jumped=true
 		elif(is_on_wall()):
+			$AnimatedSprite2D.play("jump")
+			$Jump.play()
 			velocity.y=-jump
 			jumped=true
 		if(heli_hat and heli_jumps>0):
+			$AnimatedSprite2D.play("jump")
+			$Jump.play()
 			heli_jumps-=1
 			velocity.y=-jump
 			jumped = false
