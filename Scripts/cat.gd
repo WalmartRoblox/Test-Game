@@ -35,7 +35,7 @@ func _process(delta):
 	#player control and info
 	movement()
 	jumping()
-	if(get_input_direction()>0):
+	if(get_input_direction()>=0):
 		$AnimatedSprite2D.flip_h=false
 	else:
 		$AnimatedSprite2D.flip_h=true
@@ -44,9 +44,7 @@ func _process(delta):
 	debugInfo()
 #to add a cooldown on jumping so the player can't spam jump
 func _on_jump_timer_timeout():
-	
 	$jump_timer.stop()
-	
 func get_input_direction():
 	var input_dir = Vector2.ZERO
 	input_dir = (Input.get_action_strength("walk_right") -Input.get_action_strength("walk_left"))
@@ -54,7 +52,7 @@ func get_input_direction():
 func movement():
 	$AnimatedSprite2D.play("run")
 	velocity.x = get_input_direction() *speed
-	if(get_input_direction() ==0 and not jumped):
+	if(get_input_direction() == 0 and not jumped):
 		$AnimatedSprite2D.play("idle")
 func interact():
 	if (Input.is_action_just_pressed("interact")):
@@ -83,6 +81,7 @@ func jumping():
 		$AnimatedSprite2D.play("jump")
 		if(is_on_floor()):
 			velocity.y=-jump
+			jumped=false
 		elif(is_on_wall()):
 			velocity.y=-jump
 func setHealth(value):

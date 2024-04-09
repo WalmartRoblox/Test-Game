@@ -14,7 +14,7 @@ func _process(delta):
 func _on_key_key_collected():
 	self.visible = true
 	$/root/world/level1/TextTimer.start()
-	$/root/world/level1/Area2D2/CollisionShape2D.disabled = false
+	$/root/world/level1/Area2D2/CollisionShape2D.disable = false
 
 func _on_text_timer_timeout():
 	self.visible = false

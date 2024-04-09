@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuciaapvuja10"
-path="res://.godot/imported/picklenemy.png-b1d97f3ca8ff9464eadb9b59ff242d60.ctex"
+path="res://.godot/imported/picklenemy.png-ab8b590cb1017174404c59cedf302c8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/picklenemy.png"
-dest_files=["res://.godot/imported/picklenemy.png-b1d97f3ca8ff9464eadb9b59ff242d60.ctex"]
+source_file="res://Sprites/picklenemy.png"
+dest_files=["res://.godot/imported/picklenemy.png-ab8b590cb1017174404c59cedf302c8b.ctex"]
 
 [params]
 
