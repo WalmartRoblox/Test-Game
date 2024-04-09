@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://biker2llj4bdg"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_686gp"]
-[ext_resource type="Texture2D" uid="uid://l5ck5dap1ilu" path="res://Sprites/tempbackground.jpg" id="2_m6hry"]
+[ext_resource type="Texture2D" uid="uid://l5ck5dap1ilu" path="res://tempbackground.jpg" id="2_m6hry"]
 
 [sub_resource type="SystemFont" id="SystemFont_upnvl"]
 font_names = PackedStringArray("OCR A")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b60v5pbb5fihr"]
 
 [ext_resource type="Script" path="res://Scripts/Gate.gd" id="1_i6ivc"]
-[ext_resource type="Texture2D" uid="uid://l5ck5dap1ilu" path="res://Sprites/tempbackground.jpg" id="2_6tgbe"]
+[ext_resource type="Texture2D" uid="uid://l5ck5dap1ilu" path="res://tempbackground.jpg" id="2_6tgbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umynt"]
 size = Vector2(40, 361)

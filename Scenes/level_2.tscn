@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://btcccaumbtntv"]
+[gd_scene load_steps=14 format=3 uid="uid://btcccaumbtntv"]
 
 [ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_ealyy"]
 [ext_resource type="PackedScene" uid="uid://ddm58elx4kfkg" path="res://Scenes/tile_map.tscn" id="2_1d6pj"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://Scripts/IntroLabel.gd" id="8_dri1d"]
 [ext_resource type="Script" path="res://Scripts/Door2Label.gd" id="9_dq6w1"]
 [ext_resource type="Script" path="res://Scripts/LeverLabel.gd" id="10_d1n6e"]
-[ext_resource type="PackedScene" uid="uid://bpvhm52odq8d1" path="res://Scenes/BounceBed.tscn" id="11_6e10v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pr13c"]
 texture = ExtResource("7_kqrvu")
@@ -1588,10 +1587,6 @@ wait_time = 3.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1045, 122)
 shape = SubResource("RectangleShape2D_acsao")
-
-[node name="BouceBed" parent="." instance=ExtResource("11_6e10v")]
-position = Vector2(113, 281)
-scale = Vector2(5.04798, 5.62951)
 
 [connection signal="key_collected" from="Door/Keys/key2" to="Door" method="_on_key_2_key_collected"]
 [connection signal="key_collected" from="Door/Keys/key" to="Door" method="_on_key_key_collected"]

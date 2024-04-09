@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dphnnel87ujw5"]
+[gd_scene load_steps=6 format=3 uid="uid://dphnnel87ujw5"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_yrghx"]
 [ext_resource type="PackedScene" uid="uid://y4o6258x7yq5" path="res://Scenes/level1.tscn" id="2_fn24t"]
 [ext_resource type="PackedScene" uid="uid://biker2llj4bdg" path="res://Scenes/main_menu.tscn" id="3_x7plb"]
 [ext_resource type="PackedScene" uid="uid://k0rq6ttqvwqr" path="res://Scenes/hearts_ui.tscn" id="4_74yar"]
-[ext_resource type="AudioStream" uid="uid://bbb4hudv8oh6f" path="res://beepboxsong.wav" id="4_herqa"]
 [ext_resource type="PackedScene" uid="uid://dhvqxpvj0w7uj" path="res://Scenes/cat.tscn" id="6_v0ihh"]
 
 [node name="world" type="Node2D"]
@@ -13,9 +12,7 @@ script = ExtResource("1_yrghx")
 [node name="level1" parent="." instance=ExtResource("2_fn24t")]
 
 [node name="MainMenu" parent="." instance=ExtResource("3_x7plb")]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainMenu"]
-stream = ExtResource("4_herqa")
+visible = false
 
 [node name="HeartsUI" parent="." instance=ExtResource("4_74yar")]
 

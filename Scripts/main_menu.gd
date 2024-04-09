@@ -1,6 +1,5 @@
 extends CanvasLayer
 @onready var player = get_parent().get_node("Cat")
-var escape_pressed=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,14 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(Input.is_action_just_pressed("escape")):
-		if(escape_pressed):
-			$QuitButton.hide()
-			escape_pressed=false
-		else:
-			$QuitButton.show()
-			escape_pressed=show
-			
+	pass
 
 # Shows/hides Main Menu (Does not touch the background or title though)
 func mainMenuShow():
