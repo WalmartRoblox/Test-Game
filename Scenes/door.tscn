@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://48dghfjirwhq"]
+
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="1_bf4rp"]
+[ext_resource type="Texture2D" uid="uid://qvwob8dnau63" path="res://Sprites/Door-Closed.png" id="2_so5x2"]
+[ext_resource type="Texture2D" uid="uid://ccxwingmg3k5n" path="res://Sprites/Door-Open.png" id="3_j0mi3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtaie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_so5x2")
+}],
+"loop": true,
+"name": &"Closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j0mi3")
+}],
+"loop": true,
+"name": &"Open",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vf5wu"]
+radius = 20.6667
+
+[node name="Door" type="Node2D"]
+position = Vector2(658, 368)
+scale = Vector2(2.015, 2.015)
+script = ExtResource("1_bf4rp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 5)
+sprite_frames = SubResource("SpriteFrames_gtaie")
+animation = &"Closed"
+
+[node name="Interaction_Vincinity" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Vincinity"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_vf5wu")
+
+[connection signal="area_entered" from="Interaction_Vincinity" to="." method="_on_interaction_vinicity_area_entered"]
+[connection signal="area_exited" from="Interaction_Vincinity" to="." method="_on_interaction_vincinity_area_exited"]
