@@ -25,3 +25,4 @@ func died():
 	
 func _on_door_leave():
 	$CanvasLayer/TextureRect.visible = true
+	player.stopJumpAudio()

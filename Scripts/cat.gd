@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed= 30000#speed
+@export var speed= 60000#speed
 @export var GRAVITY = 1700#gravit
-@export var jump = 55000 #jump force
+@export var jump = 75000 #jump force
 @export var termVol =1000#terminal velocity
 @export var acc = 50
 var jumped = false
@@ -110,3 +110,6 @@ func jumping(delta):
 			$jump_timer.start()
 func setHealth(value):
 	health = value
+func stopJumpAudio():
+	$Jump.set_volume_db(-1000) 
+	hide()
