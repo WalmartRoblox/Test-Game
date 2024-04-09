@@ -1506,17 +1506,17 @@ position = Vector2(1185, 170)
 [node name="Keys" type="Node" parent="Door"]
 
 [node name="key2" parent="Door/Keys" instance=ExtResource("6_oxaba")]
-position = Vector2(540, 241)
+position = Vector2(96, -142)
 scale = Vector2(0.324, 0.324)
 
 [node name="key" parent="Door/Keys" instance=ExtResource("6_oxaba")]
-position = Vector2(408, 268)
+position = Vector2(595, -288)
 
 [node name="key3" parent="Door/Keys" instance=ExtResource("6_oxaba")]
-position = Vector2(550, 301)
+position = Vector2(-384, -139)
 
 [node name="key4" parent="Door/Keys" instance=ExtResource("6_oxaba")]
-position = Vector2(481, 252)
+position = Vector2(730, 664)
 scale = Vector2(0.5642, 0.5642)
 
 [node name="Gate2" parent="." instance=ExtResource("3_s3ly6")]
