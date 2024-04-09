@@ -1616,7 +1616,11 @@ offset_right = 1150.0
 offset_bottom = 649.0
 texture = ExtResource("11_pcqed")
 
-[connection signal="finished" from="Door" to="." method="_on_door_finished"]
+[node name="Water8" parent="." instance=ExtResource("8_o7bsn")]
+position = Vector2(246, 896)
+scale = Vector2(47, 1)
+
+[connection signal="leave" from="Door" to="." method="_on_door_leave"]
 [connection signal="flipped" from="Gate2/Levers/Lever" to="Gate2" method="_on_lever_flipped"]
 [connection signal="flipped" from="Gate3/Levers/Lever" to="Gate3" method="_on_lever_flipped"]
 [connection signal="flipped" from="Gate4/Levers/Lever" to="Gate4" method="_on_lever_flipped"]

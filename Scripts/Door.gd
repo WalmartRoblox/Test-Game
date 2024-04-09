@@ -23,8 +23,7 @@ func _process(delta):
 func _on_interaction_vinicity_area_entered(area):
 	if can_open_door:
 		$AnimatedSprite2D.play("Open")
-		if(get_parent().name=="level3"):
-			finished.emit()
+		leave.emit()
 	within_vincinity = true
 
 func _on_key_key_collected():

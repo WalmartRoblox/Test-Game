@@ -7,6 +7,7 @@ func _ready():
 	$Gate3.set_code("0")
 	$Gate4.set_code("0")
 	$Gate5.set_code("1")
+	$CanvasLayer/TextureRect.visible = false
 
 	player.dead.connect(died)
 	$Level3Music.play()
@@ -22,7 +23,5 @@ func _on_respawn_level_area_entered(area):
 func died():
 	player.position = Vector2(-265, -48)
 	
-
-
-func _on_door_finished():
-	$CanvasLayer/TextureRect.show()
+func _on_door_leave():
+	$CanvasLayer/TextureRect.visible = true

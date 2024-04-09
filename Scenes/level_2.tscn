@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://btcccaumbtntv"]
+[gd_scene load_steps=18 format=3 uid="uid://btcccaumbtntv"]
 
 [ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_ealyy"]
 [ext_resource type="PackedScene" uid="uid://ddm58elx4kfkg" path="res://Scenes/tile_map.tscn" id="2_1d6pj"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bpvhm52odq8d1" path="res://Scenes/BounceBed.tscn" id="11_6e10v"]
 [ext_resource type="PackedScene" uid="uid://clqqkch4owj2f" path="res://Scenes/helicopter_hat.tscn" id="12_1awv1"]
 [ext_resource type="AudioStream" uid="uid://ciejn2yu4mdo" path="res://Audio/loop_demo1.mp3" id="13_n07i7"]
+[ext_resource type="PackedScene" uid="uid://ufgl0e522wg" path="res://Scenes/water.tscn" id="14_hfonx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acsao"]
 size = Vector2(174, 226)
@@ -1602,6 +1603,10 @@ scale = Vector2(2.39, 2.39)
 [node name="Level2Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_n07i7")
 volume_db = -10.0
+
+[node name="Water" parent="." instance=ExtResource("14_hfonx")]
+position = Vector2(542, 837)
+scale = Vector2(60, 1)
 
 [connection signal="leave" from="Door" to="." method="_on_door_leave"]
 [connection signal="key_collected" from="Door/Keys/key2" to="Door" method="_on_key_2_key_collected"]
