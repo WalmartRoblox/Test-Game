@@ -1,21 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0d62seqwevpm"]
+[gd_scene load_steps=4 format=3 uid="uid://d0d62seqwevpm"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_k2auu"]
-[ext_resource type="Texture2D" uid="uid://bwxk3oaf8e0le" path="res://Sprites/0c27387d-41c9-47b1-a08c-10d660c310f2.png" id="2_d022m"]
+[ext_resource type="Texture2D" uid="uid://cxh1qkmqq3346" path="res://Sprites/picklenemy.png" id="2_3jp63"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5mhw"]
-size = Vector2(99, 240)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pm7u8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_d022m")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pbs5g"]
+radius = 99.2024
+height = 217.99
 
 [node name="Enemy" type="PathFollow2D"]
 script = ExtResource("1_k2auu")
@@ -24,9 +14,12 @@ script = ExtResource("1_k2auu")
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyColision"]
-position = Vector2(-2.5, -4)
-shape = SubResource("RectangleShape2D_j5mhw")
+position = Vector2(-8, 2)
+rotation = 0.671952
+scale = Vector2(0.601352, 1)
+shape = SubResource("CapsuleShape2D_pbs5g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemyColision"]
-modulate = Color(1, 0, 1, 1)
-sprite_frames = SubResource("SpriteFrames_pm7u8")
+[node name="AnimatedSprite2D" type="Sprite2D" parent="EnemyColision"]
+position = Vector2(64, 60)
+scale = Vector2(8.46, 8.46)
+texture = ExtResource("2_3jp63")
