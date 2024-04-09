@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://y4o6258x7yq5"]
+[gd_scene load_steps=20 format=3 uid="uid://y4o6258x7yq5"]
 
 [ext_resource type="Script" path="res://Scripts/level1.gd" id="1_5j6my"]
 [ext_resource type="PackedScene" uid="uid://ddm58elx4kfkg" path="res://Scenes/tile_map.tscn" id="2_3kypf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0d62seqwevpm" path="res://Scenes/enemy.tscn" id="5_gvgid"]
 [ext_resource type="Script" path="res://Scripts/KeyLabel.gd" id="7_07k5r"]
 [ext_resource type="Script" path="res://Scripts/EnemyLabel.gd" id="8_ejm5g"]
+[ext_resource type="PackedScene" uid="uid://k3bmnchwwb4w" path="res://Scenes/fish.tscn" id="8_qve7k"]
 [ext_resource type="Script" path="res://Scripts/WallJumpLabel.gd" id="9_4tsgw"]
 [ext_resource type="Texture2D" uid="uid://80fyh4okwa5" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0.png" id="9_p6wgx"]
 [ext_resource type="Script" path="res://Scripts/DoorLabel.gd" id="10_on8qa"]
@@ -1550,6 +1551,9 @@ This might be useful to move up the tower..."
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("7_07k5r")
+
+[node name="Fish" parent="KeyLabel" instance=ExtResource("8_qve7k")]
+position = Vector2(355, 262)
 
 [node name="EnemyLabel" type="Label" parent="."]
 offset_left = -213.0

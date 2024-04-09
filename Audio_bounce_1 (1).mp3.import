@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ksnqjlt64q34"
+path="res://.godot/imported/Audio_bounce_1 (1).mp3-e1900c52069011b8de8d1de51856e8e5.mp3str"
+
+[deps]
+
+source_file="res://Audio_bounce_1 (1).mp3"
+dest_files=["res://.godot/imported/Audio_bounce_1 (1).mp3-e1900c52069011b8de8d1de51856e8e5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
