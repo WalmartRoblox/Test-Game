@@ -10,9 +10,9 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_fish_area_entered(area):
+
+
+func _on_area_2d_area_entered(area):
 	if(area.name == "Intereaction_Vicinity"):
-		if(player.health<=8):
-			player.health+=1
-			queue_free()
-			player.hit.emit(player.health)
+		player.heli_hat=true
+		queue_free()

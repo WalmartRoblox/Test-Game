@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctw53duiwarbx"
-path="res://.godot/imported/fish.png-373349fe5906fa24a595247b3fc0d517.ctex"
+uid="uid://co0vcjad7f1ei"
+path="res://.godot/imported/heli haty.png-de5ac66432b744a497cb99c516c590f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fish.png"
-dest_files=["res://.godot/imported/fish.png-373349fe5906fa24a595247b3fc0d517.ctex"]
+source_file="res://Sprites/heli haty.png"
+dest_files=["res://.godot/imported/heli haty.png-de5ac66432b744a497cb99c516c590f7.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://1bb1a3amye3"
-path="res://.godot/imported/themesongv2.wav-3cbaa0ebae2bf93e034770587608ec8e.sample"
+path="res://.godot/imported/themesongv2.wav-1f16205a9f3bcd6b81940ceaa667e09c.sample"
 
 [deps]
 
-source_file="res://themesongv2.wav"
-dest_files=["res://.godot/imported/themesongv2.wav-3cbaa0ebae2bf93e034770587608ec8e.sample"]
+source_file="res://Sprites/themesongv2.wav"
+dest_files=["res://.godot/imported/themesongv2.wav-1f16205a9f3bcd6b81940ceaa667e09c.sample"]
 
 [params]
 

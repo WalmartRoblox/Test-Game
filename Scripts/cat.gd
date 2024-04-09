@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var termVol =1000#terminal velocity
 @export var acc = 50
 var jumped = false
+var heli_hat = false
+var heli_jumps=2
 
 @onready var axis = Vector2.ZERO
 
@@ -31,10 +33,14 @@ func _process(delta):
 		termVol=1000
 	if(velocity.y>termVol):
 		velocity.y = termVol
-		
+	
+	if(heli_hat):
+		$AnimatedSprite2D/Hat.show()
 	#player control and info
 	movement()
 	jumping()
+	if(is_on_floor()):
+		heli_jumps=2
 	if(get_input_direction()>=0):
 		$AnimatedSprite2D.flip_h=false
 	else:
@@ -77,12 +83,16 @@ func _on_area_2d_area_entered(area):
 	print("hit "+ area.name)
 func jumping():
 	if(Input.is_action_just_pressed("jump")):
-		jumped = true
 		$AnimatedSprite2D.play("jump")
 		if(is_on_floor()):
 			velocity.y=-jump
-			jumped=false
+			jumped=true
 		elif(is_on_wall()):
 			velocity.y=-jump
+			jumped=true
+		if(heli_hat and heli_jumps>0):
+			heli_jumps-=1
+			velocity.y=-jump
+			jumped = false
 func setHealth(value):
 	health = value

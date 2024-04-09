@@ -1525,7 +1525,7 @@ scale = Vector2(2.335, 2.335)
 [node name="Keys" type="Node" parent="Door" groups=["keys"]]
 
 [node name="key" parent="Door/Keys" instance=ExtResource("4_70m0j")]
-position = Vector2(843, 243)
+position = Vector2(849, 235)
 scale = Vector2(0.33, 0.33)
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -1551,9 +1551,6 @@ This might be useful to move up the tower..."
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("7_07k5r")
-
-[node name="Fish" parent="KeyLabel" instance=ExtResource("8_qve7k")]
-position = Vector2(355, 262)
 
 [node name="EnemyLabel" type="Label" parent="."]
 offset_left = -213.0
@@ -1585,6 +1582,9 @@ text = "It looks like the key fits in this door..."
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("10_on8qa")
+
+[node name="Fish" parent="." instance=ExtResource("8_qve7k")]
+position = Vector2(348, -164)
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(1.03869, 0.995819)

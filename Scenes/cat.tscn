@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://dhvqxpvj0w7uj"]
+[gd_scene load_steps=37 format=3 uid="uid://dhvqxpvj0w7uj"]
 
 [ext_resource type="Script" path="res://Scripts/cat.gd" id="1_1dyk3"]
 [ext_resource type="Texture2D" uid="uid://dorp8ytpumnbf" path="res://Sprites/Meow Knight/Meow-Knight_Idle.png" id="2_adxnp"]
 [ext_resource type="Texture2D" uid="uid://br2icm323qh6s" path="res://Sprites/Meow Knight/Meow-Knight_Jump.png" id="3_eeu6p"]
-[ext_resource type="AudioStream" uid="uid://tdiwo7pqilic" path="res://Sprites/miguelsgp Itch Dungeon Tileset 64x64/Audio_bounce_1.mp3" id="3_n7p6m"]
 [ext_resource type="Texture2D" uid="uid://bie5r4xgh68ab" path="res://Sprites/Meow Knight/Meow-Knight_Run.png" id="4_h4hr1"]
+[ext_resource type="Texture2D" uid="uid://co0vcjad7f1ei" path="res://Sprites/heli haty.png" id="5_6ax1n"]
+[ext_resource type="AudioStream" uid="uid://ksnqjlt64q34" path="res://Sprites/Audio_bounce_1 (1).mp3" id="6_0m812"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_spnse"]
 
@@ -232,7 +233,11 @@ shape = SubResource("RectangleShape2D_wuio5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gs8hm")
 animation = &"run"
-frame_progress = 0.0787917
+
+[node name="Hat" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(9, 0)
+texture = ExtResource("5_6ax1n")
 
 [node name="jump_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -245,7 +250,7 @@ shape = SubResource("CircleShape2D_6v36k")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-914, -206)
-stream = ExtResource("3_n7p6m")
+stream = ExtResource("6_0m812")
 volume_db = -24.33
 
 [node name="Timer" type="Timer" parent="."]

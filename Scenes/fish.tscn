@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://k3bmnchwwb4w"]
 
 [ext_resource type="Script" path="res://Scripts/fish.gd" id="1_w77w5"]
-[ext_resource type="Texture2D" uid="uid://ctw53duiwarbx" path="res://fish.png" id="2_l3xk3"]
+[ext_resource type="Texture2D" uid="uid://ctw53duiwarbx" path="res://Sprites/fish.png" id="2_l3xk3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2g2td"]
 height = 32.0

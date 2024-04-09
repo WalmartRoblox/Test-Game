@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://clqqkch4owj2f"]
+
+[ext_resource type="Script" path="res://Scripts/HelicopterHat.gd" id="1_na764"]
+[ext_resource type="Texture2D" uid="uid://co0vcjad7f1ei" path="res://Sprites/heli haty.png" id="2_4i8eb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxot4"]
+
+[node name="HelicopterHat" type="Node2D"]
+script = ExtResource("1_na764")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mxot4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 7)
+texture = ExtResource("2_4i8eb")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
