@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuciaapvuja10"
-path="res://.godot/imported/picklenemy.png-b1d97f3ca8ff9464eadb9b59ff242d60.ctex"
+uid="uid://ctw53duiwarbx"
+path="res://.godot/imported/fish.png-373349fe5906fa24a595247b3fc0d517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/picklenemy.png"
-dest_files=["res://.godot/imported/picklenemy.png-b1d97f3ca8ff9464eadb9b59ff242d60.ctex"]
+source_file="res://fish.png"
+dest_files=["res://.godot/imported/fish.png-373349fe5906fa24a595247b3fc0d517.ctex"]
 
 [params]
 

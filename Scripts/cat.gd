@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var speed= 400 #speed
-@export var GRAVITY = 20#gravit
-@export var jump = 600 #jump force
+@export var GRAVITY = 1000#gravit
+@export var jump = 500 #jump force
 @export var termVol =1000#terminal velocity
 @export var acc = 50
 var jumped = false
@@ -20,7 +20,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#gravity
-	velocity.y += GRAVITY
+	velocity.y += GRAVITY * delta
 	#base movement
 	
 		
@@ -56,12 +56,11 @@ func movement():
 	velocity.x = get_input_direction() *speed
 	if(get_input_direction() ==0 and not jumped):
 		$AnimatedSprite2D.play("idle")
-		
 func interact():
 	if (Input.is_action_just_pressed("interact")):
-			for body in $"Intereaction_Vicinity".get_overlapping_areas():
-				if body.is_in_group("keys"):
-					body.queue_free()
+		for body in $"Intereaction_Vicinity".get_overlapping_areas():
+			if body.is_in_group("keys"):
+				body.queue_free()
 func debugInfo():
 	$Label.set_text("gravity: " + str(GRAVITY)+
 				"\nspeed: " + str(speed)+
