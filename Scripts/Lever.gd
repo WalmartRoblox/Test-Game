@@ -22,7 +22,9 @@ func _process(delta):
 			flipped.emit()
 
 func _on_interaction_vincinity_area_entered(area):
-	self.within_vincinity = true
+	if(area.name =="CatArea"):
+		self.within_vincinity = true
 
 func _on_interaction_vincinity_area_exited(area):
-	self.within_vincinity = false
+	if(area.name =="CatArea"):
+		self.within_vincinity = false

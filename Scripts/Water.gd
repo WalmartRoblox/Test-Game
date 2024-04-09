@@ -15,6 +15,6 @@ func _process(delta):
 
 func _on_water_area_area_entered(area):
 		if(area.name =="CatArea"):
-			player.velocity.y = -1000
+			player.velocity.y = -500
 			player.hit.emit()
 

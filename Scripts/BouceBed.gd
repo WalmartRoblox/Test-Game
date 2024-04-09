@@ -13,4 +13,4 @@ func _process(delta):
 
 func _on_area_2d_area_entered(area):
 	if(area.name=="CatArea"):
-		player.velocity.y=-1500
+		player.velocity.y=-1200
